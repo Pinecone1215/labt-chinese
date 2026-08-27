@@ -84,8 +84,10 @@ main {
 .word-pairs { min-width: 10rem; }
 .single-words { min-width: 5rem; }
 .question-example { min-width: 16rem; }
+.question-example li {text-align: left;}
 
 .flow-arrow {
+	color: green;
     font-size: 2rem;
     user-select: none;
 }
