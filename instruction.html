@@ -9,15 +9,17 @@
 
     <body>
     	<main>
-    		<section class="instruction" style="display: none;">
+    		<section class="instruction">
     			<h1>實驗說明</h1>
     			<button id="start-button" class="control-button">開始</button>
     		</section>
 
-    		<section class="instruction" style="display: flex;">
+    		<section class="instruction">
 			    <div class="instruction-text">
-			        <p>請在整個實驗過程中保持專注，本實驗共有 <strong>32 個回合</strong>。</p>
-			        <p>每個回合中，你會依序看到：</p>
+			        <p>
+			        	請在整個實驗過程中保持專注，本實驗共有 <strong>32 個回合</strong>。
+			        	每個回合中，你會依序看到：
+			        </p>
 
 			        <ul>
 			            <li><strong>4 組詞語配對</strong></li>
@@ -55,7 +57,46 @@
 			    </div>
 			</section>
 
-			<nav class="navigation">
+			<section class="instruction active">
+			    <div class="instruction-text">
+			        <h2>步驟一：記住詞語配對</h2>
+
+			        <p>
+			            首先，畫面上會出現 4 組詞語配對。
+			            請盡量記住所有的詞語配對，之後可能會測驗其中任何一組。
+			        </p>
+			    </div>
+
+			    <div class="pair-example">
+			        <span>範例</span>
+
+			        <div class="pair-row">
+			            <span>鋼琴</span>
+			            <span>–</span>
+			            <span>雲朵</span>
+			        </div>
+
+			        <div class="pair-row">
+			            <span>草地</span>
+			            <span>–</span>
+			            <span>咖啡</span>
+			        </div>
+
+			        <div class="pair-row">
+			            <span>農場</span>
+			            <span>–</span>
+			            <span>窗簾</span>
+			        </div>
+
+			        <div class="pair-row">
+			            <span>石頭</span>
+			            <span>–</span>
+			            <span>風箏</span>
+			        </div>
+			    </div>
+			</section>
+
+			<nav class="navigation active">
 				<button id="back-button" class="control-button">上一頁</button>
 			    <span id="page-position">0/5</span>
 			    <button id="next-button" class="control-button">下一頁</button>
