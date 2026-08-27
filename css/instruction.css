@@ -2,7 +2,11 @@
 
 * { box-sizing: border-box; }
 html { font-size: 16px; }
-body { margin: 0; }
+
+body { 
+	margin: 0; 
+	font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+}
 
 main {
     width: 100%;
@@ -18,7 +22,6 @@ main {
 
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
 }
 
@@ -45,4 +48,44 @@ main {
 
 #start-button:hover {
     background-color: rgb(230, 230, 230);
+}
+
+.instruction-text {
+    width: 100%;
+    font-size: 1.5rem;
+}
+
+.instruction-text p { margin: 0 0 0.5rem; }
+.instruction-text ul {
+    margin: 0;
+    padding-left: 2rem;
+}
+
+.trial-example {
+    width: 100%;
+    margin-top: 4rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.word-pairs,
+.single-words,
+.question-example {
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.word-pairs p,
+.single-words p,
+.question-example p { margin: 0.35rem 0; }
+
+.word-pairs { min-width: 10rem; }
+.single-words { min-width: 5rem; }
+.question-example { min-width: 16rem; }
+
+.flow-arrow {
+    font-size: 2rem;
+    user-select: none;
 }

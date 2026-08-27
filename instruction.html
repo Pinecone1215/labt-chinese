@@ -9,10 +9,50 @@
 
     <body>
     	<main>
-    		<section class="instruction">
+    		<section class="instruction" style="display: none;">
     			<h1>實驗說明</h1>
     			<button id="start-button">開始</button>
     		</section>
+
+    		<section class="instruction" style="display: flex;">
+			    <div class="instruction-text">
+			        <p>請在整個實驗過程中保持專注，本實驗共有 <strong>32 個回合</strong>。</p>
+			        <p>每個回合中，你會依序看到：</p>
+
+			        <ul>
+			            <li><strong>4 組詞語配對</strong></li>
+			            <li><strong>2 個單獨出現的詞語</strong></li>
+			            <li><strong>1 道題目，包含 3 個選項</strong></li>
+			        </ul>
+			    </div>
+
+			    <div class="trial-example">
+			        <div class="word-pairs">
+			            <p>草地 – 咖啡</p>
+			            <p>農場 – 窗簾</p>
+			            <p>鋼琴 – 雲朵</p>
+			            <p>石頭 – 風箏</p>
+			        </div>
+
+			        <span class="flow-arrow">→</span>
+
+			        <div class="single-words">
+			            <p>蘋果</p>
+			            <p>椅子</p>
+			        </div>
+
+			        <span class="flow-arrow">→</span>
+
+			        <div class="question-example">
+			            <p>「草地」原本和哪一個詞語配對？</p>
+
+			            <p>咖啡 ✓</p>
+			            <p>農場</p>
+			            <p>公園</p>
+			        </div>
+			    </div>
+			</section>
+
     	</main>
     </body>
 </html>
