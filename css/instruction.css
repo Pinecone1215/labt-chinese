@@ -6,6 +6,9 @@ html { font-size: 16px; }
 body { 
 	margin: 0; 
 	font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+
+	user-select: none;
+    cursor: default;
 }
 
 main {
@@ -13,6 +16,7 @@ main {
     min-height: 100vh;
 
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -29,25 +33,23 @@ main {
     margin: 0 0 3rem;
     font-size: 4rem;
     font-weight: 600;
-    user-select: none;
 }
 
-#start-button {
-    width: 10rem;
-    height: 4rem;
-
+.control-button {
     border: 1px solid rgba(0, 0, 0, 0.7);
     border-radius: 2rem;
 
     background: white;
-    font-size: 1.25rem;
 
     cursor: pointer;
     transition: background-color 0.3s;
 }
+.control-button:hover {background-color: rgb(230, 230, 230); }
 
-#start-button:hover {
-    background-color: rgb(230, 230, 230);
+#start-button {
+    width: 10rem;
+    height: 4rem;
+    font-size: 1.25rem;
 }
 
 .instruction-text {
@@ -63,7 +65,7 @@ main {
 
 .trial-example {
     width: 100%;
-    margin-top: 4rem;
+    margin-top: 2rem;
 
     display: flex;
     align-items: center;
@@ -89,5 +91,21 @@ main {
 .flow-arrow {
 	color: green;
     font-size: 2rem;
-    user-select: none;
+}
+
+.navigation {
+    width: min(90%, 900px);
+    margin-top: 1.5rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#page-position { font-size: 1.5rem; }
+#back-button,
+#next-button {
+    width: 8rem;
+    height: 3.5rem;
+    font-size: 1.5rem;
 }
