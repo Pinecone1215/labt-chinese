@@ -9,7 +9,7 @@
 
     <body>
     	<main>
-    		<section class="instruction">
+    		<section class="instruction active">
     			<h1>實驗說明</h1>
     			<button id="start-button" class="control-button">開始</button>
     		</section>
@@ -49,7 +49,7 @@
 			            <p>「草地」原本和哪一個詞語配對？</p>
 
 			            <ul>
-			            	<li>咖啡 <span style="color: green;">✔</span></li>
+			            	<li>咖啡  <span class="correct-mark">✔</span></li>
 			            	<li>農場</li>
 			            	<li>公園</li>
 			            </ul>
@@ -57,7 +57,7 @@
 			    </div>
 			</section>
 
-			<section class="instruction active">
+			<section class="instruction">
 			    <div class="instruction-text">
 			        <h2>步驟一：記住詞語配對</h2>
 
@@ -96,7 +96,72 @@
 			    </div>
 			</section>
 
-			<nav class="navigation active">
+			<section class="instruction">
+				<div class="instruction-text">
+					<h2>步驟二：忽略單獨出現的詞語</h2>
+
+					<p>
+						接下來，畫面上會依序出現 2 個單獨的詞語。
+						這些詞語並不重要，請直接忽略。你不需要記住它們。
+					</p>
+				</div>
+
+				<div class="single-example">
+					<span>範例</span>
+
+					<div class="single-row">
+			            <span>椅子</span>
+			        </div>
+
+			        <div class="flow-arrow">➤</div>
+
+			        <div class="single-row">
+			            <span>蘋果</span>
+			        </div>
+				</div>
+			</section>
+
+			<section class="instruction">
+				<div class="instruction-text">
+					<h2>步驟三：回答問題</h2>
+
+					<p>
+						最後，畫面上會出現一道題目。
+						請盡可能快速且正確地選出答案，你有最多 8 秒的作答時間。
+					</p>
+				</div>
+				
+				<div class="choice-example">
+					<span>範例</span>
+
+					<div class="single-row">
+			            <span>咖啡</span>
+			        </div>
+
+			        <div class="single-row">
+			            <span>農場</span>
+			        </div>
+
+			        <div class="single-row">
+			            <span>公園</span>
+			        </div>
+				</div>
+			</section>
+
+			<section class="instruction">
+				<div class="instruction-text">
+					<h2>最後提醒</h2>
+
+					<ul>
+					    <li>三個選項可能都很熟悉，請選出在該回合中與題目詞語配對的詞。</li>
+					    <li>每個回合開始前，畫面中央會先出現十字（＋）。</li>
+					</ul>
+
+					<p>實驗即將開始，請保持專注並盡力作答。</p>
+				</div>
+			</section>
+
+			<nav class="navigation">
 				<button id="back-button" class="control-button">上一頁</button>
 			    <span id="page-position">0/5</span>
 			    <button id="next-button" class="control-button">下一頁</button>
