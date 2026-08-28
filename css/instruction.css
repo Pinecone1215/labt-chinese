@@ -164,7 +164,7 @@ main {
 
 .pair-row span:first-child,
 .pair-row span:last-child,
-.single-row span {
+.single-row > span {
     padding: 0.5rem 1rem;
     border: 2px solid rgba(0, 0, 0, 0.5);
 }
@@ -174,11 +174,11 @@ main {
     text-align: center;
 }
 
-.single-row span {
+.single-row > span {
     display: inline-block;
     width: 8rem;
 }
 
 .correct-mark { color: green; }
 
-.choice-example .single-row span { background-color: white; }
+.choice-example .single-row > span { background-color: white; }
