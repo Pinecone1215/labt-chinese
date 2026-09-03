@@ -1,0 +1,50 @@
+@charset "UTF-8";
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html { font-size: 16px; }
+
+body { 
+    font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+
+    user-select: none;
+    cursor: default;
+}
+
+main {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#task-screen {
+    width: min(90%, 48rem);
+    aspect-ratio: 16 / 9;
+
+    border: 2px solid rgba(0, 0, 0, 0.5);
+    border-radius: 0.75rem;
+    background-color: aliceblue;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#task-screen > div {
+    display: none;
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#task-screen > div.active {
+    display: flex;
+}
