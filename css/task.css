@@ -48,3 +48,8 @@ main {
 #task-screen > div.active {
     display: flex;
 }
+
+#message {
+	font-size: 3rem;
+	text-align: center;
+}
