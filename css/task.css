@@ -25,7 +25,7 @@ main {
 }
 
 #task-screen {
-    width: min(90%, 48rem);
+    width: min(90%, 64rem);
     aspect-ratio: 16 / 9;
 
     border: 2px solid rgba(0, 0, 0, 0.5);
@@ -52,4 +52,8 @@ main {
 #message {
 	font-size: 3rem;
 	text-align: center;
+}
+
+#fixation {
+	font-size: 10rem;
 }
