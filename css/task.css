@@ -25,8 +25,8 @@ main {
 }
 
 #task-screen {
-    width: min(90%, 64rem);
-    aspect-ratio: 16 / 9;
+    width: min(90%, 48rem);
+    aspect-ratio: 3 / 2;
 
     border: 2px solid rgba(0, 0, 0, 0.5);
     border-radius: 0.75rem;
@@ -56,4 +56,23 @@ main {
 
 #fixation {
 	font-size: 10rem;
+}
+
+#word-pairs {
+    gap: 1rem;
+}
+
+.pair-row {
+    display: grid;
+    grid-template-columns: 12rem 3rem 12rem;
+    align-items: center;
+
+    font-size: 1.6rem;
+    text-align: center;
+}
+
+.pair-row span:first-child,
+.pair-row span:last-child {
+    padding: 0.5rem 1rem;
+    border: 2px solid rgba(0, 0, 0, 0.5);
 }
