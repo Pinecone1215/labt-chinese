@@ -66,13 +66,22 @@ main {
     display: grid;
     grid-template-columns: 12rem 3rem 12rem;
     align-items: center;
+}
 
+#single-word {
+    width: 12rem;
+}
+
+.pair-row,
+#single-word {
     font-size: 1.6rem;
     text-align: center;
 }
 
 .pair-row span:first-child,
-.pair-row span:last-child {
+.pair-row span:last-child,
+#single-word {
     padding: 0.5rem 1rem;
     border: 2px solid rgba(0, 0, 0, 0.5);
 }
+
