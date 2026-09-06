@@ -1,0 +1,22 @@
+{
+    "time_unit": "ms",
+    "common": {
+        "accuracy_threshold": 0.67,
+        "min_apr": 2000,
+        "max_apr": 10000,
+        "single_word_duration": 1000,
+        "fixation_duration": 2000,
+        "trial_number_duration": 2000,
+        "response_limit": 8000
+    },
+    "younger": {
+        "initial_apr": 4000,
+        "apr_adjustment_above_threshold": -400,
+        "apr_adjustment_below_threshold": 600
+    },
+    "older": {
+        "initial_apr": 7000,
+        "apr_adjustment_above_threshold": -500,
+        "apr_adjustment_below_threshold": 800
+    }
+}
