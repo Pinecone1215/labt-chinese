@@ -4,6 +4,12 @@ async function load_data(language, level) {
     return data
 }
 
+async function load_config() {
+    const response = await fetch("./data/task_parameters.json");
+    const config = await response.json();
+    return config;
+}
+
 function show_screen(screen) {
     return new Promise((resolve) => {
         requestAnimationFrame((timestamp) => {
