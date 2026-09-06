@@ -1,10 +1,8 @@
 {
-  "language": "chinese",
-  "level": "difficult",
   "trials": [
     {
-      "trial": "1",
-      "word-pairs": [
+      "number": 1,
+      "word_pairs": [
         [
           "白板",
           "花瓶"
@@ -22,21 +20,21 @@
           "簡訊"
         ]
       ],
-      "single-words": [
+      "single_words": [
         "鞋子",
         "桌子"
       ],
-      "question-word": "花瓶",
+      "question_word": "花瓶",
       "options": [
         "窗簾",
         "椅子",
         "白板"
       ],
-      "answer-index": 3
+      "answer_index": 3
     },
     {
-      "trial": "2",
-      "word-pairs": [
+      "number": 2,
+      "word_pairs": [
         [
           "橋樑",
           "醫生"
@@ -54,21 +52,21 @@
           "座位"
         ]
       ],
-      "single-words": [
+      "single_words": [
         "蘋果",
         "叉子"
       ],
-      "question-word": "橋樑",
+      "question_word": "橋樑",
       "options": [
         "廚房",
         "醫生",
         "湖泊"
       ],
-      "answer-index": 2
+      "answer_index": 2
     },
     {
-      "trial": "3",
-      "word-pairs": [
+      "number": 3,
+      "word_pairs": [
         [
           "冰箱",
           "老師"
@@ -86,21 +84,21 @@
           "花瓶"
         ]
       ],
-      "single-words": [
+      "single_words": [
         "水果",
         "牛奶"
       ],
-      "question-word": "老師",
+      "question_word": "老師",
       "options": [
         "奶油",
         "學生",
         "冰箱"
       ],
-      "answer-index": 3
+      "answer_index": 3
     },
     {
-      "trial": "4",
-      "word-pairs": [
+      "number": 4,
+      "word_pairs": [
         [
           "鍵盤",
           "手錶"
@@ -118,21 +116,21 @@
           "衣架"
         ]
       ],
-      "single-words": [
+      "single_words": [
         "橘子",
         "蘋果"
       ],
-      "question-word": "鍵盤",
+      "question_word": "鍵盤",
       "options": [
         "手錶",
         "手機",
         "雜誌"
       ],
-      "answer-index": 1
+      "answer_index": 1
     },
     {
-      "trial": "5",
-      "word-pairs": [
+      "number": 5,
+      "word_pairs": [
         [
           "教室",
           "簡訊"
@@ -150,21 +148,21 @@
           "硬幣"
         ]
       ],
-      "single-words": [
+      "single_words": [
         "葡萄",
         "桃子"
       ],
-      "question-word": "教室",
+      "question_word": "教室",
       "options": [
         "鄰居",
         "簡訊",
         "單車"
       ],
-      "answer-index": 2
+      "answer_index": 2
     },
     {
-      "trial": "6",
-      "word-pairs": [
+      "number": 6,
+      "word_pairs": [
         [
           "鎖頭",
           "郵票"
@@ -182,21 +180,21 @@
           "滑鼠"
         ]
       ],
-      "single-words": [
+      "single_words": [
         "叉子",
         "牛奶"
       ],
-      "question-word": "鎖頭",
+      "question_word": "鎖頭",
       "options": [
         "郵票",
         "壁紙",
         "報紙"
       ],
-      "answer-index": 1
+      "answer_index": 1
     },
     {
-      "trial": "7",
-      "word-pairs": [
+      "number": 7,
+      "word_pairs": [
         [
           "月亮",
           "座位"
@@ -214,21 +212,21 @@
           "手錶"
         ]
       ],
-      "single-words": [
+      "single_words": [
         "桌子",
         "橘子"
       ],
-      "question-word": "月亮",
+      "question_word": "月亮",
       "options": [
         "車站",
         "月票",
         "座位"
       ],
-      "answer-index": 3
+      "answer_index": 3
     },
     {
-      "trial": "8",
-      "word-pairs": [
+      "number": 8,
+      "word_pairs": [
         [
           "醫院",
           "麵包"
@@ -246,21 +244,21 @@
           "剪刀"
         ]
       ],
-      "single-words": [
+      "single_words": [
         "香蕉",
         "李子"
       ],
-      "question-word": "麵包",
+      "question_word": "麵包",
       "options": [
         "醫院",
         "商店",
         "醫生"
       ],
-      "answer-index": 1
+      "answer_index": 1
     },
     {
-      "trial": "9",
-      "word-pairs": [
+      "number": 9,
+      "word_pairs": [
         [
           "電話",
           "水壺"
@@ -278,21 +276,21 @@
           "購物"
         ]
       ],
-      "single-words": [
+      "single_words": [
         "鳳梨",
         "水果"
       ],
-      "question-word": "水壺",
+      "question_word": "水壺",
       "options": [
         "夏天",
         "電話",
         "電鈴"
       ],
-      "answer-index": 2
+      "answer_index": 2
     },
     {
-      "trial": "10",
-      "word-pairs": [
+      "number": 10,
+      "word_pairs": [
         [
           "電腦",
           "瓦斯"
@@ -310,21 +308,21 @@
           "簡訊"
         ]
       ],
-      "single-words": [
+      "single_words": [
         "鏡子",
         "杏桃"
       ],
-      "question-word": "電腦",
+      "question_word": "電腦",
       "options": [
         "白板",
         "簡訊",
         "瓦斯"
       ],
-      "answer-index": 3
+      "answer_index": 3
     },
     {
-      "trial": "11",
-      "word-pairs": [
+      "number": 11,
+      "word_pairs": [
         [
           "書本",
           "車站"
@@ -342,21 +340,21 @@
           "施工"
         ]
       ],
-      "single-words": [
+      "single_words": [
         "筷子",
         "柳丁"
       ],
-      "question-word": "書本",
+      "question_word": "書本",
       "options": [
         "車站",
         "飛機",
         "站牌"
       ],
-      "answer-index": 1
+      "answer_index": 1
     },
     {
-      "trial": "12",
-      "word-pairs": [
+      "number": 12,
+      "word_pairs": [
         [
           "床鋪",
           "購物"
@@ -374,21 +372,21 @@
           "機場"
         ]
       ],
-      "single-words": [
+      "single_words": [
         "桌子",
         "襪子"
       ],
-      "question-word": "床鋪",
+      "question_word": "床鋪",
       "options": [
         "雜誌",
         "購物",
         "枕頭"
       ],
-      "answer-index": 2
+      "answer_index": 2
     },
     {
-      "trial": "13",
-      "word-pairs": [
+      "number": 13,
+      "word_pairs": [
         [
           "草地",
           "廚房"
@@ -406,21 +404,21 @@
           "座位"
         ]
       ],
-      "single-words": [
+      "single_words": [
         "木瓜",
         "孔子"
       ],
-      "question-word": "廚房",
+      "question_word": "廚房",
       "options": [
         "太陽",
         "盆栽",
         "草地"
       ],
-      "answer-index": 3
+      "answer_index": 3
     },
     {
-      "trial": "14",
-      "word-pairs": [
+      "number": 14,
+      "word_pairs": [
         [
           "雨傘",
           "學校"
@@ -438,21 +436,21 @@
           "河流"
         ]
       ],
-      "single-words": [
+      "single_words": [
         "橘子",
         "筷子"
       ],
-      "question-word": "學校",
+      "question_word": "學校",
       "options": [
         "電話",
         "雨季",
         "雨傘"
       ],
-      "answer-index": 3
+      "answer_index": 3
     },
     {
-      "trial": "15",
-      "word-pairs": [
+      "number": 15,
+      "word_pairs": [
         [
           "奶油",
           "醫院"
@@ -470,21 +468,21 @@
           "車站"
         ]
       ],
-      "single-words": [
+      "single_words": [
         "獅子",
         "西瓜"
       ],
-      "question-word": "醫院",
+      "question_word": "醫院",
       "options": [
         "奶油",
         "果醬",
         "廚房"
       ],
-      "answer-index": 1
+      "answer_index": 1
     },
     {
-      "trial": "16",
-      "word-pairs": [
+      "number": 16,
+      "word_pairs": [
         [
           "公園",
           "護士"
@@ -502,21 +500,21 @@
           "廚房"
         ]
       ],
-      "single-words": [
+      "single_words": [
         "草莓",
         "蓮霧"
       ],
-      "question-word": "公園",
+      "question_word": "公園",
       "options": [
         "草地",
         "護士",
         "醫生"
       ],
-      "answer-index": 2
+      "answer_index": 2
     },
     {
-      "trial": "17",
-      "word-pairs": [
+      "number": 17,
+      "word_pairs": [
         [
           "鄰居",
           "硬幣"
@@ -534,21 +532,21 @@
           "施工"
         ]
       ],
-      "single-words": [
+      "single_words": [
         "襪子",
         "鳳梨"
       ],
-      "question-word": "鄰居",
+      "question_word": "鄰居",
       "options": [
         "施工",
         "耳機",
         "硬幣"
       ],
-      "answer-index": 3
+      "answer_index": 3
     },
     {
-      "trial": "18",
-      "word-pairs": [
+      "number": 18,
+      "word_pairs": [
         [
           "睡覺",
           "河流"
@@ -566,21 +564,21 @@
           "滑鼠"
         ]
       ],
-      "single-words": [
+      "single_words": [
         "叉子",
         "香蕉"
       ],
-      "question-word": "河流",
+      "question_word": "河流",
       "options": [
         "睡覺",
         "草地",
         "床鋪"
       ],
-      "answer-index": 1
+      "answer_index": 1
     },
     {
-      "trial": "19",
-      "word-pairs": [
+      "number": 19,
+      "word_pairs": [
         [
           "鹽巴",
           "火車"
@@ -598,21 +596,21 @@
           "夏天"
         ]
       ],
-      "single-words": [
+      "single_words": [
         "葡萄",
         "香瓜"
       ],
-      "question-word": "火車",
+      "question_word": "火車",
       "options": [
         "夏天",
         "白糖",
         "鹽巴"
       ],
-      "answer-index": 3
+      "answer_index": 3
     },
     {
-      "trial": "20",
-      "word-pairs": [
+      "number": 20,
+      "word_pairs": [
         [
           "飛機",
           "花束"
@@ -630,21 +628,21 @@
           "漁船"
         ]
       ],
-      "single-words": [
+      "single_words": [
         "芒果",
         "芭樂"
       ],
-      "question-word": "飛機",
+      "question_word": "飛機",
       "options": [
         "花束",
         "盆栽",
         "旅行"
       ],
-      "answer-index": 1
+      "answer_index": 1
     },
     {
-      "trial": "21",
-      "word-pairs": [
+      "number": 21,
+      "word_pairs": [
         [
           "商店",
           "樂器"
@@ -662,21 +660,21 @@
           "溫泉"
         ]
       ],
-      "single-words": [
+      "single_words": [
         "櫻桃",
         "筷子"
       ],
-      "question-word": "樂器",
+      "question_word": "樂器",
       "options": [
         "奶油",
         "購物",
         "商店"
       ],
-      "answer-index": 3
+      "answer_index": 3
     },
     {
-      "trial": "22",
-      "word-pairs": [
+      "number": 22,
+      "word_pairs": [
         [
           "太陽",
           "剪刀"
@@ -694,21 +692,21 @@
           "歌曲"
         ]
       ],
-      "single-words": [
+      "single_words": [
         "燕子",
         "苦瓜"
       ],
-      "question-word": "太陽",
+      "question_word": "太陽",
       "options": [
         "火車",
         "刀工",
         "剪刀"
       ],
-      "answer-index": 3
+      "answer_index": 3
     },
     {
-      "trial": "23",
-      "word-pairs": [
+      "number": 23,
+      "word_pairs": [
         [
           "冬天",
           "衣架"
@@ -726,21 +724,21 @@
           "觀眾"
         ]
       ],
-      "single-words": [
+      "single_words": [
         "香瓜",
         "橘子"
       ],
-      "question-word": "衣架",
+      "question_word": "衣架",
       "options": [
         "郵票",
         "冬天",
         "大衣"
       ],
-      "answer-index": 2
+      "answer_index": 2
     },
     {
-      "trial": "24",
-      "word-pairs": [
+      "number": 24,
+      "word_pairs": [
         [
           "藥膏",
           "夏天"
@@ -758,21 +756,21 @@
           "花束"
         ]
       ],
-      "single-words": [
+      "single_words": [
         "叉子",
         "牛奶"
       ],
-      "question-word": "夏天",
+      "question_word": "夏天",
       "options": [
         "奶茶",
         "藥膏",
         "花束"
       ],
-      "answer-index": 2
+      "answer_index": 2
     },
     {
-      "trial": "25",
-      "word-pairs": [
+      "number": 25,
+      "word_pairs": [
         [
           "音樂",
           "機場"
@@ -790,21 +788,21 @@
           "花瓶"
         ]
       ],
-      "single-words": [
+      "single_words": [
         "橘子",
         "筷子"
       ],
-      "question-word": "音樂",
+      "question_word": "音樂",
       "options": [
         "機場",
         "咖啡",
         "樂器"
       ],
-      "answer-index": 1
+      "answer_index": 1
     },
     {
-      "trial": "26",
-      "word-pairs": [
+      "number": 26,
+      "word_pairs": [
         [
           "盆栽",
           "施工"
@@ -822,21 +820,21 @@
           "老師"
         ]
       ],
-      "single-words": [
+      "single_words": [
         "葡萄",
         "桃子"
       ],
-      "question-word": "施工",
+      "question_word": "施工",
       "options": [
         "公園",
         "花瓶",
         "盆栽"
       ],
-      "answer-index": 3
+      "answer_index": 3
     },
     {
-      "trial": "27",
-      "word-pairs": [
+      "number": 27,
+      "word_pairs": [
         [
           "樹木",
           "雜誌"
@@ -854,21 +852,21 @@
           "座位"
         ]
       ],
-      "single-words": [
+      "single_words": [
         "鞋子",
         "櫻桃"
       ],
-      "question-word": "樹木",
+      "question_word": "樹木",
       "options": [
         "簡訊",
         "書本",
         "雜誌"
       ],
-      "answer-index": 3
+      "answer_index": 3
     },
     {
-      "trial": "28",
-      "word-pairs": [
+      "number": 28,
+      "word_pairs": [
         [
           "影片",
           "漁船"
@@ -886,21 +884,21 @@
           "河流"
         ]
       ],
-      "single-words": [
+      "single_words": [
         "西瓜",
         "桌子"
       ],
-      "question-word": "漁船",
+      "question_word": "漁船",
       "options": [
         "影片",
         "水壺",
         "影印"
       ],
-      "answer-index": 1
+      "answer_index": 1
     },
     {
-      "trial": "29",
-      "word-pairs": [
+      "number": 29,
+      "word_pairs": [
         [
           "壁紙",
           "滑鼠"
@@ -918,21 +916,21 @@
           "夏天"
         ]
       ],
-      "single-words": [
+      "single_words": [
         "香蕉",
         "蓮霧"
       ],
-      "question-word": "壁紙",
+      "question_word": "壁紙",
       "options": [
         "剪刀",
         "滑鼠",
         "電腦"
       ],
-      "answer-index": 2
+      "answer_index": 2
     },
     {
-      "trial": "30",
-      "word-pairs": [
+      "number": 30,
+      "word_pairs": [
         [
           "湯匙",
           "觀眾"
@@ -950,21 +948,21 @@
           "樂器"
         ]
       ],
-      "single-words": [
+      "single_words": [
         "李子",
         "草莓"
       ],
-      "question-word": "觀眾",
+      "question_word": "觀眾",
       "options": [
         "電影",
         "桌墊",
         "湯匙"
       ],
-      "answer-index": 3
+      "answer_index": 3
     },
     {
-      "trial": "31",
-      "word-pairs": [
+      "number": 31,
+      "word_pairs": [
         [
           "窗簾",
           "溫泉"
@@ -982,21 +980,21 @@
           "漁船"
         ]
       ],
-      "single-words": [
+      "single_words": [
         "鏡子",
         "水果"
       ],
-      "question-word": "溫泉",
+      "question_word": "溫泉",
       "options": [
         "鄰居",
         "窗戶",
         "窗簾"
       ],
-      "answer-index": 3
+      "answer_index": 3
     },
     {
-      "trial": "32",
-      "word-pairs": [
+      "number": 32,
+      "word_pairs": [
         [
           "麵粉",
           "歌曲"
@@ -1014,17 +1012,17 @@
           "花束"
         ]
       ],
-      "single-words": [
+      "single_words": [
         "筷子",
         "柳丁"
       ],
-      "question-word": "麵粉",
+      "question_word": "麵粉",
       "options": [
         "歌曲",
         "吉他",
         "音樂"
       ],
-      "answer-index": 1
+      "answer_index": 1
     }
   ]
 }
