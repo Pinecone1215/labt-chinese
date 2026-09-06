@@ -47,15 +47,46 @@ async function main() {
     const mc_question = document.getElementById("multiple-choice-question");
     const question_word = document.getElementById("question-word");
     const options = document.getElementById("options");
+    const buttons = options.querySelectorAll("button");
 
-    // 測驗開始
-    trial = data.trials[0];
+    const trial = data.trials[0];
+    const category = "younger";
 
-    category = "younger";
     let apr = config[category].initial_apr;
-
     let timestamp = null;
 
+    async function wait_for_response() {
+        let index = null;
+        let rt = null;
+        let start_timestamp = null;
+
+        buttons.forEach((button, i) => {
+            button.onclick = () => {
+                index = i + 1;
+                rt = performance.now() - start_timestamp;
+            };
+        });
+
+        start_timestamp = await show_screen(mc_question);
+        return new Promise((resolve) => {
+            function check_response(timestamp) {
+                if (index !== null) {
+                    resolve({
+                        index: index,
+                        rt: rt
+                    });
+                } else if (timestamp - start_timestamp >= config.common.response_limit) {
+                    resolve({
+                        index: null,
+                        rt: config.common.response_limit
+                    });
+                } else { requestAnimationFrame(check_response); }
+            }
+            requestAnimationFrame(check_response);
+        });
+    }
+
+    // 測驗開始
     // 顯示 fixation
     timestamp = await show_screen(fixation);
     await wait_until(timestamp + config.common.fixation_duration);
@@ -98,12 +129,21 @@ async function main() {
 
     // 顯示 multiple choice question
     question_word.textContent = trial.question_word;
-    const buttons = options.querySelectorAll("button");
     for (let i = 0; i < buttons.length; i++) {
         buttons[i].textContent = trial.options[i];
     }
-    timestamp = await show_screen(mc_question);
-    let end = await wait_until(timestamp + config.common.response_limit);
+    const response = await wait_for_response();
+
+    // 當前 trial 結算
+    const correct = response.index === trial.answer_index ? 1 : 0;
+    const result = {
+        apr: apr,
+        correct: correct,
+        response_rt: response.rt,
+        response_index: response.index,
+        answer_index: trial.answer_index
+    };
+    console.log(result);
 }
 
 main();
