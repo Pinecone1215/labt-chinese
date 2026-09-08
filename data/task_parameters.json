@@ -3,7 +3,6 @@
     "common": {
         "accuracy_threshold": 0.67,
         "adaptive_window_size": 10,
-        "accuracy_decimal_places": 2,
         "min_apr": 2000,
         "max_apr": 10000,
         "single_word_duration": 1000,

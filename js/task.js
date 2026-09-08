@@ -148,11 +148,7 @@ async function main() {
     // 計算正確率
     if (correct_history.length > max_length) correct_history.shift();
     const correct_count = correct_history.reduce((sum, value) => sum + value, 0);
-
-    const accuracy = parseFloat(
-        (correct_count / correct_history.length)
-        .toFixed(config.common.accuracy_decimal_places)
-    );
+    const accuracy = correct_count / correct_history.length
     
     // 當前 trial 結算
     const result = {
