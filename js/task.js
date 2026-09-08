@@ -1,9 +1,8 @@
 const url_params = new URLSearchParams(window.location.search);
 const prolific_id = url_params.get("external_id");
-
-const level = "easy";
-const lang = "chinese";
-const category = "younger";
+const level = url_params.get("level");
+const lang = url_params.get("lang");
+const category = url_params.get("category");
 
 const message = document.getElementById("message");
 const fixation = document.getElementById("fixation");
