@@ -18,6 +18,10 @@ function show_page(new_position) {
     else {
         navigation.classList.add('active');
         page_position.textContent = `${position}/${sections.length - 1}`;
+
+        if (position === sections.length - 1) {
+            next_button.textContent = '開始測驗';
+        } else { next_button.textContent = '下一頁'; }
     }
 }
 
@@ -27,5 +31,7 @@ back_button.addEventListener('click', () => {
 });
 
 next_button.addEventListener('click', () => {
-    if (position < sections.length - 1) { show_page(position + 1); }
+    if (position < sections.length - 1) {
+        show_page(position + 1);
+    } else { window.location.href = `task.html${window.location.search}`; }
 });
