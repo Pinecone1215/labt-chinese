@@ -150,11 +150,14 @@ async function main() {
     const correct_count = correct_history.reduce((sum, value) => sum + value, 0);
     const accuracy = correct_count / correct_history.length;
 
+    // 僅用於 APR 判斷
+    const adaptive_accuracy = parseFloat(accuracy.toFixed(2));
+
     // 根據滑動窗口正確率調整 apr
     const last_apr = apr;
-    if (accuracy >= config.common.accuracy_threshold) {
+    if (adaptive_accuracy > config.common.accuracy_threshold) {
         apr += config[category].apr_adjustment_above_threshold;
-    } else {
+    } else if (adaptive_accuracy < config.common.accuracy_threshold) {
         apr += config[category].apr_adjustment_below_threshold;
     }
 
