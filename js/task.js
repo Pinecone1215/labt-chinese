@@ -92,105 +92,104 @@ async function wait_for_response(response_limit) {
 async function main() {
     const config = await load_config();
     const data = await load_data(lang, level);
-
-    let apr = config[category].initial_apr;
+    
     let timestamp = null;
+    let apr = config[category].initial_apr;
 
+    const results = [];
     const correct_history = [];
     const max_length = config.common.adaptive_window_size;
 
-    const trial = data.trials[0];
+    for (const trial of data.trials) {
+        // 測驗開始
+        // 顯示 fixation
+        timestamp = await show_screen(fixation);
+        await wait_until(timestamp + config.common.fixation_duration);
 
-    // 測驗開始
-    // 顯示 fixation
-    timestamp = await show_screen(fixation);
-    await wait_until(timestamp + config.common.fixation_duration);
+        // 顯示 trial number
+        message.textContent = `第 ${trial.number} 回合`;
+        timestamp = await show_screen(message);
+        await wait_until(timestamp + config.common.trial_number_duration);
 
-    // 顯示 trial number
-    message.textContent = `第 ${trial.number} 回合`;
-    timestamp = await show_screen(message);
-    await wait_until(timestamp + config.common.trial_number_duration);
+        // 顯示 word pairs
+        const shuffled_word_pairs = shuffle(trial.word_pairs);
+        for (let i = 0; i < pair_rows.length; i++) {
+            const words = pair_rows[i].querySelectorAll("span");
+            words[0].textContent = shuffled_word_pairs[i][0];
+            words[2].textContent = shuffled_word_pairs[i][1];
+        }
+        timestamp = await show_screen(word_pairs);
+        await wait_until(timestamp + apr);
 
-    // 顯示 word pairs
-    const shuffled_word_pairs = shuffle(trial.word_pairs);
-    for (let i = 0; i < pair_rows.length; i++) {
-        const words = pair_rows[i].querySelectorAll("span");
-        words[0].textContent = shuffled_word_pairs[i][0];
-        words[2].textContent = shuffled_word_pairs[i][1];
+        // 顯示 fixation
+        timestamp = await show_screen(fixation);
+        await wait_until(timestamp + config.common.fixation_duration);
+
+        // 顯示 single word
+        single_word.textContent = trial.single_words[0];
+        timestamp = await show_screen(single_word);
+        await wait_until(timestamp + config.common.single_word_duration);
+
+        // 顯示 fixation
+        timestamp = await show_screen(fixation);
+        await wait_until(timestamp + config.common.fixation_duration);
+
+        // 顯示 single word
+        single_word.textContent = trial.single_words[1];
+        timestamp = await show_screen(single_word);
+        await wait_until(timestamp + config.common.single_word_duration);
+
+        // 顯示 fixation
+        timestamp = await show_screen(fixation);
+        await wait_until(timestamp + config.common.fixation_duration);
+
+        // 顯示 multiple choice question
+        question_word.textContent = trial.question_word;
+        for (let i = 0; i < buttons.length; i++) {
+            buttons[i].textContent = trial.options[i];
+        }
+        const response = await wait_for_response(config.common.response_limit);
+
+        // 判斷是否回答正確
+        const correct = response.index === trial.answer_index ? 1 : 0;
+        correct_history.push(correct);
+
+        // 計算正確率
+        if (correct_history.length > max_length) correct_history.shift();
+        const correct_count = correct_history.reduce((sum, value) => sum + value, 0);
+        const accuracy = correct_count / correct_history.length;
+
+        // 僅用於 APR 判斷
+        const adaptive_accuracy = parseFloat(accuracy.toFixed(2));
+
+        // 根據滑動窗口正確率調整 apr
+        const last_apr = apr;
+        if (adaptive_accuracy > config.common.accuracy_threshold) {
+            apr += config[category].apr_adjustment_above_threshold;
+        } else if (adaptive_accuracy < config.common.accuracy_threshold) {
+            apr += config[category].apr_adjustment_below_threshold;
+        }
+
+        // 限制 apr 上下限
+        apr = Math.max(
+            config.common.min_apr,
+            Math.min(apr, config.common.max_apr)
+        );
+        
+        // 當前 trial 結算
+        const result = {
+            time: new Date().toLocaleString("zh-TW"),
+            prolific_id: prolific_id,
+            trial_number: trial.number,
+            apr: last_apr,
+            response: response.index === null ? null : trial.options[response.index - 1],
+            answer: trial.options[trial.answer_index-1],
+            is_correct: correct,
+            rt: response.rt,
+            accuracy: accuracy 
+        };
+        results.push(result);
     }
-    timestamp = await show_screen(word_pairs);
-    await wait_until(timestamp + apr);
-
-    // 顯示 fixation
-    timestamp = await show_screen(fixation);
-    await wait_until(timestamp + config.common.fixation_duration);
-
-    // 顯示 single word
-    single_word.textContent = trial.single_words[0];
-    timestamp = await show_screen(single_word);
-    await wait_until(timestamp + config.common.single_word_duration);
-
-    // 顯示 fixation
-    timestamp = await show_screen(fixation);
-    await wait_until(timestamp + config.common.fixation_duration);
-
-    // 顯示 single word
-    single_word.textContent = trial.single_words[1];
-    timestamp = await show_screen(single_word);
-    await wait_until(timestamp + config.common.single_word_duration);
-
-    // 顯示 fixation
-    timestamp = await show_screen(fixation);
-    await wait_until(timestamp + config.common.fixation_duration);
-
-    // 顯示 multiple choice question
-    question_word.textContent = trial.question_word;
-    for (let i = 0; i < buttons.length; i++) {
-        buttons[i].textContent = trial.options[i];
-    }
-    const response = await wait_for_response(config.common.response_limit);
-
-    // 判斷是否回答正確
-    const correct = response.index === trial.answer_index ? 1 : 0;
-    correct_history.push(correct);
-
-    // 計算正確率
-    if (correct_history.length > max_length) correct_history.shift();
-    const correct_count = correct_history.reduce((sum, value) => sum + value, 0);
-    const accuracy = correct_count / correct_history.length;
-
-    // 僅用於 APR 判斷
-    const adaptive_accuracy = parseFloat(accuracy.toFixed(2));
-
-    // 根據滑動窗口正確率調整 apr
-    const last_apr = apr;
-    if (adaptive_accuracy > config.common.accuracy_threshold) {
-        apr += config[category].apr_adjustment_above_threshold;
-    } else if (adaptive_accuracy < config.common.accuracy_threshold) {
-        apr += config[category].apr_adjustment_below_threshold;
-    }
-
-    // 限制 apr 上下限
-    apr = Math.max(
-        config.common.min_apr,
-        Math.min(apr, config.common.max_apr)
-    );
-    
-    // 當前 trial 結算
-    const result = {
-        time: new Date().toLocaleString("zh-TW"),
-        prolific_id: prolific_id,
-        trial_number: trial.number,
-        apr: last_apr,
-        response: response.index === null ? null : trial.options[response.index - 1],
-        answer: trial.options[trial.answer_index-1],
-        is_correct: correct,
-        rt: response.rt,
-        accuracy: accuracy 
-    };
-
-    console.log(result);
-    console.log("next apr:", apr);
 }
 
 main();
