@@ -141,28 +141,44 @@ async function main() {
     }
     const response = await wait_for_response(config.common.response_limit);
 
-    // 判斷是否回達正確
+    // 判斷是否回答正確
     const correct = response.index === trial.answer_index ? 1 : 0;
     correct_history.push(correct);
 
     // 計算正確率
     if (correct_history.length > max_length) correct_history.shift();
     const correct_count = correct_history.reduce((sum, value) => sum + value, 0);
-    const accuracy = correct_count / correct_history.length
+    const accuracy = correct_count / correct_history.length;
+
+    // 根據滑動窗口正確率調整 apr
+    const last_apr = apr;
+    if (accuracy >= config.common.accuracy_threshold) {
+        apr += config[category].apr_adjustment_above_threshold;
+    } else {
+        apr += config[category].apr_adjustment_below_threshold;
+    }
+
+    // 限制 apr 上下限
+    apr = Math.max(
+        config.common.min_apr,
+        Math.min(apr, config.common.max_apr)
+    );
     
     // 當前 trial 結算
     const result = {
         time: new Date().toLocaleString("zh-TW"),
         prolific_id: prolific_id,
         trial_number: trial.number,
-        apr: apr,
+        apr: last_apr,
         response: response.index === null ? null : trial.options[response.index - 1],
         answer: trial.options[trial.answer_index-1],
         is_correct: correct,
         rt: response.rt,
         accuracy: accuracy 
     };
+
     console.log(result);
+    console.log("next apr:", apr);
 }
 
 main();
