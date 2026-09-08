@@ -49,6 +49,15 @@ function wait_until(target_timestamp) {
     });
 }
 
+function shuffle(array) {
+    const shuffled = [...array];
+    for (let i = shuffled.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    return shuffled;
+}
+
 async function wait_for_response(response_limit) {
     let rt = null;
     let index = null;
@@ -104,10 +113,11 @@ async function main() {
     await wait_until(timestamp + config.common.trial_number_duration);
 
     // 顯示 word pairs
+    const shuffled_word_pairs = shuffle(trial.word_pairs);
     for (let i = 0; i < pair_rows.length; i++) {
         const words = pair_rows[i].querySelectorAll("span");
-        words[0].textContent = trial.word_pairs[i][0];
-        words[2].textContent = trial.word_pairs[i][1];
+        words[0].textContent = shuffled_word_pairs[i][0];
+        words[2].textContent = shuffled_word_pairs[i][1];
     }
     timestamp = await show_screen(word_pairs);
     await wait_until(timestamp + apr);
