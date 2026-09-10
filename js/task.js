@@ -110,31 +110,6 @@ async function upload_results(category, level, results) {
     return data;
 }
 
-async function test_upload_results() {
-    const test_results = [
-        {
-            time: new Date().toLocaleString("zh-TW"),
-            prolific_id: "FRONTEND_TEST",
-            trial_number: 1,
-            apr: 4000,
-            response: 2,
-            answer: 2,
-            is_correct: 1,
-            rt: 1350,
-            accuracy: 2 / 3
-        }
-    ];
-
-    const result = await upload_results(
-        "younger",
-        "easy",
-        test_results
-    );
-    console.log(result);
-}
-
-test_upload_results();
-
 async function main() {
     const config = await load_config();
     const data = await load_data(lang, level);
@@ -234,7 +209,14 @@ async function main() {
             rt: response.rt,
             accuracy: accuracy 
         };
+
+        // 紀錄本次 trial 結果
+        results.push(result);
     }
+
+    // 上傳本次測驗之結果
+    const upload_result = await upload_results(category, level, results);
+    console.log(upload_result);
 }
 
 main();
