@@ -214,9 +214,17 @@ async function main() {
         results.push(result);
     }
 
+    // 顯示資料上傳中
+    message.textContent = "資料上傳中，請稍候……";
+    await show_screen(message);
+
     // 上傳本次測驗之結果
     const upload_result = await upload_results(category, level, results);
     console.log(upload_result);
+
+    // 顯示任務完成
+    message.innerHTML = "任務已完成<br>感謝您的參與!";
+    await show_screen(message);
 }
 
 main();
