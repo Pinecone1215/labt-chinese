@@ -1,7 +1,7 @@
 {
     "time_unit": "ms",
     "common": {
-        "accuracy_threshold": 0.67,
+        "accuracy_threshold": {"numerator": 2, "denominator": 3},
         "adaptive_window_size": 10,
         "min_apr": 2000,
         "max_apr": 10000,

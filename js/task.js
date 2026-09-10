@@ -100,6 +100,9 @@ async function main() {
     const correct_history = [];
     const max_length = config.common.adaptive_window_size;
 
+    const accuracy_threshold = 
+        config.common.accuracy_threshold.numerator / config.common.accuracy_threshold.denominator;
+
     for (const trial of data.trials) {
         // 測驗開始
         // 顯示 fixation
@@ -159,14 +162,11 @@ async function main() {
         const correct_count = correct_history.reduce((sum, value) => sum + value, 0);
         const accuracy = correct_count / correct_history.length;
 
-        // 僅用於 APR 判斷
-        const adaptive_accuracy = parseFloat(accuracy.toFixed(2));
-
         // 根據滑動窗口正確率調整 apr
         const last_apr = apr;
-        if (adaptive_accuracy > config.common.accuracy_threshold) {
+        if (accuracy > accuracy_threshold) {
             apr += config[category].apr_adjustment_above_threshold;
-        } else if (adaptive_accuracy < config.common.accuracy_threshold) {
+        } else if (accuracy < accuracy_threshold) {
             apr += config[category].apr_adjustment_below_threshold;
         }
 
