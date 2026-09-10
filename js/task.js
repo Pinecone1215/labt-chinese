@@ -1,3 +1,6 @@
+const DATABASE_ENDPOINT = 
+"https://script.google.com/macros/s/AKfycbyKIq2x_dfteLJOXSTI3yKL-KwzR-TK9qrCHpBukRiWuCQeR2okA-kV9FZLr7-IYr8/exec";
+
 const url_params = new URLSearchParams(window.location.search);
 const prolific_id = url_params.get("external_id");
 const level = url_params.get("level");
@@ -88,6 +91,49 @@ async function wait_for_response(response_limit) {
         requestAnimationFrame(check_response);
     });
 }
+
+async function upload_results(category, level, results) {
+    const payload = {
+        category: category,
+        level: level,
+        results: results
+    };
+
+    const response = await fetch(DATABASE_ENDPOINT, {
+        method: "POST",
+        headers: {"Content-Type": "text/plain;charset=utf-8"},
+        body: JSON.stringify(payload)
+    });
+
+    const data = await response.json();
+    if (!data.success) throw new Error(data.error);
+    return data;
+}
+
+async function test_upload_results() {
+    const test_results = [
+        {
+            time: new Date().toLocaleString("zh-TW"),
+            prolific_id: "FRONTEND_TEST",
+            trial_number: 1,
+            apr: 4000,
+            response: 2,
+            answer: 2,
+            is_correct: 1,
+            rt: 1350,
+            accuracy: 2 / 3
+        }
+    ];
+
+    const result = await upload_results(
+        "younger",
+        "easy",
+        test_results
+    );
+    console.log(result);
+}
+
+test_upload_results();
 
 async function main() {
     const config = await load_config();
@@ -188,7 +234,6 @@ async function main() {
             rt: response.rt,
             accuracy: accuracy 
         };
-        results.push(result);
     }
 }
 
