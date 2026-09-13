@@ -2,7 +2,6 @@ const DATABASE_ENDPOINT =
 "https://script.google.com/macros/s/AKfycbyKIq2x_dfteLJOXSTI3yKL-KwzR-TK9qrCHpBukRiWuCQeR2okA-kV9FZLr7-IYr8/exec";
 
 const url_params = new URLSearchParams(window.location.search);
-const prolific_id = url_params.get("external_id");
 const level = url_params.get("level");
 const lang = url_params.get("lang");
 const category = url_params.get("category");
@@ -113,6 +112,8 @@ async function upload_results(category, level, results) {
 async function main() {
     const config = await load_config();
     const data = await load_data(lang, level);
+
+    const participant_id = crypto.randomUUID();
     
     let timestamp = null;
     let apr = config[category].initial_apr;
@@ -200,7 +201,7 @@ async function main() {
         // 當前 trial 結算
         const result = {
             time: new Date().toLocaleString("zh-TW"),
-            prolific_id: prolific_id,
+            participant_id: participant_id,
             trial_number: trial.number,
             apr: last_apr,
             response: response.index === null ? null : trial.options[response.index - 1],
