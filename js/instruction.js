@@ -20,7 +20,7 @@ function show_page(new_position) {
         page_position.textContent = `${position}/${sections.length - 1}`;
 
         if (position === sections.length - 1) {
-            next_button.textContent = '開始測驗';
+            next_button.textContent = '前往測驗';
         } else { next_button.textContent = '下一頁'; }
     }
 }

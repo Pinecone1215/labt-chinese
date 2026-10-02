@@ -35,6 +35,32 @@ main > div.active {
     display: flex;
 }
 
+#start-screen {
+    flex-direction: column;
+    gap: 1.5rem;
+
+    font-size: 1.6rem;
+    text-align: center;
+}
+
+#start-task-button {
+    background-color: white;
+
+    width: 10rem;
+    height: 4rem;
+    font-size: 1.4rem;
+
+    border: 2px solid rgba(0, 0, 0, 0.5);
+    border-radius: 2rem;
+
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#start-task-button:hover {
+    background-color: rgb(230, 230, 230);
+}
+
 #message {
 	font-size: 3rem;
 	text-align: center;

@@ -228,4 +228,18 @@ async function main() {
     await show_screen(message);
 }
 
-main();
+const start_button = document.getElementById("start-task-button");
+start_button.addEventListener("click", async () => {
+    start_button.disabled = true;
+
+    try {
+        if (!document.fullscreenElement && document.fullscreenEnabled) {
+            await document.documentElement.requestFullscreen();
+        }
+    } catch (error) {
+        console.warn("無法進入全螢幕：", error);
+    }
+
+    await main();
+    
+}, { once: true });
