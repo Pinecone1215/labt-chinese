@@ -181,3 +181,17 @@ main {
 .correct-mark { color: green; }
 
 .choice-example .single-row > span { background-color: white; }
+
+.choice-example {
+    flex-direction: column;
+}
+
+.choice-question {
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.choice-options {
+    display: flex;
+    gap: 1rem;
+}
