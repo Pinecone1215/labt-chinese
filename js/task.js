@@ -6,6 +6,8 @@ const level = url_params.get("level");
 const lang = url_params.get("lang");
 const category = url_params.get("category");
 
+const start_button = document.getElementById("start-task-button");
+const screens = document.querySelectorAll("main > div");
 const message = document.getElementById("message");
 const fixation = document.getElementById("fixation");
 const word_pairs = document.getElementById("word-pairs");
@@ -31,7 +33,6 @@ async function load_data(language, level) {
 function show_screen(screen) {
     return new Promise((resolve) => {
         requestAnimationFrame((timestamp) => {
-            const screens = document.querySelectorAll("main > div");
             screens.forEach((item) => { item.classList.remove("active"); });
             screen.classList.add("active");
             resolve(timestamp);
@@ -123,7 +124,7 @@ async function main() {
     const max_length = config.common.adaptive_window_size;
 
     const accuracy_threshold = 
-        config.common.accuracy_threshold.numerator / config.common.accuracy_threshold.denominator;
+    config.common.accuracy_threshold.numerator / config.common.accuracy_threshold.denominator;
 
     for (const trial of data.trials) {
         // 測驗開始
@@ -228,14 +229,12 @@ async function main() {
     await show_screen(message);
 }
 
-const start_button = document.getElementById("start-task-button");
 start_button.addEventListener("click", async () => {
     start_button.disabled = true;
 
     try {
-        if (!document.fullscreenElement && document.fullscreenEnabled) {
+        if (!document.fullscreenElement && document.fullscreenEnabled)
             await document.documentElement.requestFullscreen();
-        }
     } catch (error) {
         console.warn("無法進入全螢幕：", error);
     }

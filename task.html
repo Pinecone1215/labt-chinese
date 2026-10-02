@@ -1,65 +1,65 @@
 <!DOCTYPE html>
 <html lang="zh-Hant-TW">
-	<head>
-        <meta charset="UTF-8">
-        <title>LABT 測驗</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="css/task.css" rel="stylesheet">
-        <script src="js/task.js" defer></script>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <title>LABT 測驗</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/task.css" rel="stylesheet">
+    <script src="js/task.js" defer></script>
+</head>
 
-    <body>
-    	<main>
-            <div id="start-screen" class="active">
-                <p>
-                    按下「開始測驗」後，將進入全螢幕模式。<br>
-                    測驗進行期間請保持全螢幕，並盡量不要切換至其他視窗。
-                </p>
-                <button id="start-task-button">開始測驗</button>
-            </div>
-    
-            <div id="message"></div>
-            <div id="fixation">+</div>
+<body>
+    <main>
+        <div id="start-screen" class="active">
+            <p>
+                按下「開始測驗」後，將進入全螢幕模式。<br>
+                測驗進行期間請保持全螢幕，並盡量不要切換至其他視窗。
+            </p>
+            <button id="start-task-button">開始測驗</button>
+        </div>
+        
+        <div id="message"></div>
+        <div id="fixation">+</div>
 
-            <div id="word-pairs">
-                <div class="pair-row">
-                    <span></span>
-                    <span>-</span>
-                    <span></span>
-                </div>
-
-                <div class="pair-row">
-                    <span></span>
-                    <span>-</span>
-                    <span></span>
-                </div>
-                
-                <div class="pair-row">
-                    <span></span>
-                    <span>-</span>
-                    <span></span>
-                </div>
-
-                <div class="pair-row">
-                    <span></span>
-                    <span>-</span>
-                    <span></span>
-                </div>
+        <div id="word-pairs">
+            <div class="pair-row">
+                <span></span>
+                <span>-</span>
+                <span></span>
             </div>
 
-            <div id="single-word"></div>
-
-            <div id="multiple-choice-question">
-                <p id="question-text">
-                    請選出與「<span id="question-word"></span>」正確配對的詞語。
-                </p>
-
-                <div id="options">
-                    <button class="option"></button>
-                    <button class="option"></button>
-                    <button class="option"></button>
-                </div>
+            <div class="pair-row">
+                <span></span>
+                <span>-</span>
+                <span></span>
             </div>
-        </main>
-    </body>
+            
+            <div class="pair-row">
+                <span></span>
+                <span>-</span>
+                <span></span>
+            </div>
+
+            <div class="pair-row">
+                <span></span>
+                <span>-</span>
+                <span></span>
+            </div>
+        </div>
+
+        <div id="single-word"></div>
+
+        <div id="multiple-choice-question">
+            <p id="question-text">
+                請選出與「<span id="question-word"></span>」正確配對的詞語。
+            </p>
+
+            <div id="options">
+                <button class="option"></button>
+                <button class="option"></button>
+                <button class="option"></button>
+            </div>
+        </div>
+    </main>
+</body>
 </html>

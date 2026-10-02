@@ -62,12 +62,12 @@ main > div.active {
 }
 
 #message {
-	font-size: 3rem;
-	text-align: center;
+    font-size: 3rem;
+    text-align: center;
 }
 
 #fixation {
-	font-size: 10rem;
+    font-size: 10rem;
 }
 
 #word-pairs {

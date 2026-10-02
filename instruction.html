@@ -1,179 +1,179 @@
 <!DOCTYPE html>
 <html lang="zh-Hant-TW">
-	<head>
-        <meta charset="UTF-8">
-        <title>LABT 實驗說明</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="css/instruction.css" rel="stylesheet">
-        <script src="js/instruction.js" defer></script>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <title>LABT 實驗說明</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/instruction.css" rel="stylesheet">
+    <script src="js/instruction.js" defer></script>
+</head>
 
-    <body>
-    	<main>
-    		<section class="instruction active">
-    			<h1>實驗說明</h1>
-    			<button id="start-button" class="control-button">開始</button>
-    		</section>
+<body>
+    <main>
+        <section class="instruction active">
+            <h1>實驗說明</h1>
+            <button id="start-button" class="control-button">開始</button>
+        </section>
 
-    		<section class="instruction">
-			    <div class="instruction-text">
-			        <p>
-			        	請在整個實驗過程中保持專注，本實驗共有 <strong>32 個回合</strong>。
-			        	每個回合中，你會依序看到：
-			        </p>
+        <section class="instruction">
+            <div class="instruction-text">
+                <p>
+                    請在整個實驗過程中保持專注，本實驗共有 <strong>32 個回合</strong>。
+                    每個回合中，你會依序看到：
+                </p>
 
-			        <ul>
-			            <li><strong>4 組詞語配對</strong></li>
-			            <li><strong>2 個單獨出現的詞語</strong></li>
-			            <li><strong>1 道題目，包含 3 個選項</strong></li>
-			        </ul>
-			    </div>
+                <ul>
+                    <li><strong>4 組詞語配對</strong></li>
+                    <li><strong>2 個單獨出現的詞語</strong></li>
+                    <li><strong>1 道題目，包含 3 個選項</strong></li>
+                </ul>
+            </div>
 
-			    <div class="trial-example">
-			        <div class="word-pairs">
-			            <p>草地 – 咖啡</p>
-			            <p>農場 – 窗簾</p>
-			            <p>鋼琴 – 雲朵</p>
-			            <p>石頭 – 風箏</p>
-			        </div>
+            <div class="trial-example">
+                <div class="word-pairs">
+                    <p>草地 – 咖啡</p>
+                    <p>農場 – 窗簾</p>
+                    <p>鋼琴 – 雲朵</p>
+                    <p>石頭 – 風箏</p>
+                </div>
 
-			        <span class="flow-arrow">➤</span>
+                <span class="flow-arrow">➤</span>
 
-			        <div class="single-words">
-			            <p>蘋果</p>
-			            <p>椅子</p>
-			        </div>
+                <div class="single-words">
+                    <p>蘋果</p>
+                    <p>椅子</p>
+                </div>
 
-			        <span class="flow-arrow">➤</span>
+                <span class="flow-arrow">➤</span>
 
-			        <div class="question-example">
-			            <p>「草地」原本和哪一個詞語配對？</p>
+                <div class="question-example">
+                    <p>「草地」原本和哪一個詞語配對？</p>
 
-			            <ul>
-			            	<li>咖啡  <span class="correct-mark">✔</span></li>
-			            	<li>農場</li>
-			            	<li>公園</li>
-			            </ul>
-			        </div>
-			    </div>
-			</section>
+                    <ul>
+                        <li>咖啡  <span class="correct-mark">✔</span></li>
+                        <li>農場</li>
+                        <li>公園</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
 
-			<section class="instruction">
-			    <div class="instruction-text">
-			        <h2>步驟一：記住詞語配對</h2>
+        <section class="instruction">
+            <div class="instruction-text">
+                <h2>步驟一：記住詞語配對</h2>
 
-			        <p>
-			            首先，畫面上會出現 4 組詞語配對。
-			            請盡量記住所有的詞語配對，之後可能會測驗其中任何一組。
-			        </p>
-			    </div>
+                <p>
+                    首先，畫面上會出現 4 組詞語配對。
+                    請盡量記住所有的詞語配對，之後可能會測驗其中任何一組。
+                </p>
+            </div>
 
-			    <div class="pair-example">
-			        <span>範例</span>
+            <div class="pair-example">
+                <span>範例</span>
 
-			        <div class="pair-row">
-			            <span>鋼琴</span>
-			            <span>–</span>
-			            <span>雲朵</span>
-			        </div>
+                <div class="pair-row">
+                    <span>鋼琴</span>
+                    <span>–</span>
+                    <span>雲朵</span>
+                </div>
 
-			        <div class="pair-row">
-			            <span>草地</span>
-			            <span>–</span>
-			            <span>咖啡</span>
-			        </div>
+                <div class="pair-row">
+                    <span>草地</span>
+                    <span>–</span>
+                    <span>咖啡</span>
+                </div>
 
-			        <div class="pair-row">
-			            <span>農場</span>
-			            <span>–</span>
-			            <span>窗簾</span>
-			        </div>
+                <div class="pair-row">
+                    <span>農場</span>
+                    <span>–</span>
+                    <span>窗簾</span>
+                </div>
 
-			        <div class="pair-row">
-			            <span>石頭</span>
-			            <span>–</span>
-			            <span>風箏</span>
-			        </div>
-			    </div>
-			</section>
+                <div class="pair-row">
+                    <span>石頭</span>
+                    <span>–</span>
+                    <span>風箏</span>
+                </div>
+            </div>
+        </section>
 
-			<section class="instruction">
-				<div class="instruction-text">
-					<h2>步驟二：忽略單獨出現的詞語</h2>
+        <section class="instruction">
+            <div class="instruction-text">
+                <h2>步驟二：忽略單獨出現的詞語</h2>
 
-					<p>
-						接下來，畫面上會依序出現 2 個單獨的詞語。
-						這些詞語並不重要，請直接忽略。你不需要記住它們。
-					</p>
-				</div>
+                <p>
+                    接下來，畫面上會依序出現 2 個單獨的詞語。
+                    這些詞語並不重要，請直接忽略。你不需要記住它們。
+                </p>
+            </div>
 
-				<div class="single-example">
-					<span>範例</span>
+            <div class="single-example">
+                <span>範例</span>
 
-					<div class="single-row">
-			            <span>椅子</span>
-			        </div>
+                <div class="single-row">
+                    <span>椅子</span>
+                </div>
 
-			        <div class="flow-arrow">➤</div>
+                <div class="flow-arrow">➤</div>
 
-			        <div class="single-row">
-			            <span>蘋果</span>
-			        </div>
-				</div>
-			</section>
+                <div class="single-row">
+                    <span>蘋果</span>
+                </div>
+            </div>
+        </section>
 
-			<section class="instruction">
-				<div class="instruction-text">
-					<h2>步驟三：回答問題</h2>
+        <section class="instruction">
+            <div class="instruction-text">
+                <h2>步驟三：回答問題</h2>
 
-					<p>
-						最後，畫面上會出現一道題目。
-						請盡可能快速且正確地選出答案，你有最多 8 秒的作答時間。
-					</p>
-				</div>
-				
-				<div class="choice-example">
-				    <span>範例</span>
+                <p>
+                    最後，畫面上會出現一道題目。
+                    請盡可能快速且正確地選出答案，你有最多 8 秒的作答時間。
+                </p>
+            </div>
+            
+            <div class="choice-example">
+                <span>範例</span>
 
-				    <p class="choice-question">
-				        請選出與「草地」正確配對的詞語。
-				    </p>
+                <p class="choice-question">
+                    請選出與「草地」正確配對的詞語。
+                </p>
 
-				    <div class="choice-options">
-				        <div class="single-row">
-				            <span>咖啡 <span class="correct-mark">✔</span></span>
-				        </div>
+                <div class="choice-options">
+                    <div class="single-row">
+                        <span>咖啡 <span class="correct-mark">✔</span></span>
+                    </div>
 
-				        <div class="single-row">
-				            <span>農場</span>
-				        </div>
+                    <div class="single-row">
+                        <span>農場</span>
+                    </div>
 
-				        <div class="single-row">
-				            <span>公園</span>
-				        </div>
-				    </div>
-				</div>
-			</section>
+                    <div class="single-row">
+                        <span>公園</span>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-			<section class="instruction">
-				<div class="instruction-text">
-					<h2>最後提醒</h2>
+        <section class="instruction">
+            <div class="instruction-text">
+                <h2>最後提醒</h2>
 
-					<ul>
-					    <li>三個選項可能都很熟悉，請選出在該回合中與題目詞語配對的詞。</li>
-					    <li>每個回合開始前，畫面中央會先出現十字（＋）。</li>
-					    <li>進入測驗頁後，請按「開始測驗」，系統將嘗試切換至全螢幕模式。</li>
-					</ul>
+                <ul>
+                    <li>三個選項可能都很熟悉，請選出在該回合中與題目詞語配對的詞。</li>
+                    <li>每個回合開始前，畫面中央會先出現十字（＋）。</li>
+                    <li>進入測驗頁後，請按「開始測驗」，系統將嘗試切換至全螢幕模式。</li>
+                </ul>
 
-					<p>實驗即將開始，請保持專注並盡力作答。</p>
-				</div>
-			</section>
+                <p>實驗即將開始，請保持專注並盡力作答。</p>
+            </div>
+        </section>
 
-			<nav class="navigation">
-				<button id="back-button" class="control-button">上一頁</button>
-			    <span id="page-position"></span>
-			    <button id="next-button" class="control-button">下一頁</button>
-			</nav>
-    	</main>
-    </body>
+        <nav class="navigation">
+            <button id="back-button" class="control-button">上一頁</button>
+            <span id="page-position"></span>
+            <button id="next-button" class="control-button">下一頁</button>
+        </nav>
+    </main>
+</body>
 </html>

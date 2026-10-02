@@ -10,7 +10,7 @@ function show_page(new_position) {
     sections[position].classList.remove('active');
 
     position = new_position;
-	sections[position].classList.add('active');
+    sections[position].classList.add('active');
 
     if (position === 0) {
         navigation.classList.remove('active');
