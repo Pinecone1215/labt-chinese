@@ -31,7 +31,7 @@ async function load_data(language, level) {
 function show_screen(screen) {
     return new Promise((resolve) => {
         requestAnimationFrame((timestamp) => {
-            const screens = document.querySelectorAll("#task-screen > div");
+            const screens = document.querySelectorAll("main > div");
             screens.forEach((item) => { item.classList.remove("active"); });
             screen.classList.add("active");
             resolve(timestamp);

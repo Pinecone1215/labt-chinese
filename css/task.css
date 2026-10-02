@@ -17,34 +17,21 @@ body {
 
 main {
     min-height: 100vh;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-#task-screen {
-    width: min(90%, 48rem);
-    aspect-ratio: 3 / 2;
-
-    border: 2px solid rgba(0, 0, 0, 0.5);
-    border-radius: 0.75rem;
-    background-color: aliceblue;
+    background-color: white;
 
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-#task-screen > div {
+main > div {
     display: none;
 
     justify-content: center;
     align-items: center;
 }
 
-#task-screen > div.active {
+main > div.active {
     display: flex;
 }
 
