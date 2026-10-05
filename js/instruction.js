@@ -25,6 +25,27 @@ function show_page(new_position) {
     }
 }
 
+async function apply_condition_style() {
+    const url_params = new URLSearchParams(window.location.search);
+    const category = url_params.get("category");
+
+    const response = await fetch("./data/task_parameters.json");
+    const config = await response.json();
+
+    const condition = config[category];
+    document.documentElement.style.setProperty(
+        "--base-font-size",
+        condition.font_size
+    );
+
+    document.documentElement.style.setProperty(
+        "--base-font-weight",
+        condition.font_weight
+    );
+}
+
+apply_condition_style();
+
 start_button.addEventListener('click', () => { show_page(1); });
 back_button.addEventListener('click', () => {
     if (position > 0) { show_page(position - 1); }

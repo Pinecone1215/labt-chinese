@@ -13,11 +13,17 @@
     "younger": {
         "initial_apr": 4000,
         "apr_adjustment_above_threshold": -400,
-        "apr_adjustment_below_threshold": 600
+        "apr_adjustment_below_threshold": 600,
+
+        "font_size": "16px",
+        "font_weight": 400
     },
     "older": {
         "initial_apr": 7000,
         "apr_adjustment_above_threshold": -500,
-        "apr_adjustment_below_threshold": 800
+        "apr_adjustment_below_threshold": 800,
+
+        "font_size": "20px",
+        "font_weight": 700
     }
 }
