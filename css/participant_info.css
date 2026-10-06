@@ -40,7 +40,7 @@ input {
 
     font-family: inherit;
     font-weight: inherit;
-    font-size: calc(var(--base-size, 16px) * 1.6);
+    font-size: 1.6rem;
 
     padding: 2px 0.5rem;
     text-align: center;
