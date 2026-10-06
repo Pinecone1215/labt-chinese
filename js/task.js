@@ -243,12 +243,14 @@ async function main() {
     await show_screen(message);
 
     // 上傳本次測驗之結果，失敗時重試
+    let upload_ok = false;
     let retry_count = 0;
     const retry_limit = 1;
     while (true) {
         try {
             message.textContent = "資料上傳中，請稍候……";
             await upload_results(category, level, results);
+            upload_ok = true;
             break;
         } catch (error) {
             console.error("資料上傳失敗：", error);
@@ -256,13 +258,12 @@ async function main() {
             if (retry_count < retry_limit) {
                 message.textContent = "資料上傳失敗，5 秒後重試，請勿關閉頁面。";
                 await show_screen(message);
-
                 await new Promise((resolve) => setTimeout(resolve, 5000));
             }
             else { 
                 message.textContent = "資料上傳失敗，請通知研究人員，暫勿關閉或重新整理頁面。";
                 await show_screen(message);
-                return;
+                break;
             }
 
             retry_count += 1;
@@ -270,8 +271,17 @@ async function main() {
     }
 
     // 顯示任務完成
-    message.innerHTML = "任務已完成<br>感謝您的參與!";
-    await show_screen(message);
+    if (upload_ok) {
+        message.innerHTML = "任務已完成<br>感謝您的參與!";
+        await show_screen(message);
+    }
+    
+    try {
+        if (document.fullscreenElement) 
+            await document.exitFullscreen();
+    } catch (error) {
+        console.warn("無法離開全螢幕：", error);
+    }
 }
 
 apply_condition_style();
