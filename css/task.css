@@ -10,6 +10,7 @@ html { font-size: 16px; }
 
 body { 
     font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+    font-weight: var(--base-font-weight, 400);
 
     user-select: none;
     cursor: default;
@@ -39,7 +40,7 @@ main > div.active {
     flex-direction: column;
     gap: 1.5rem;
 
-    font-size: 1.6rem;
+    font-size: calc(var(--base-font-size, 16px) * 1.6);
     text-align: center;
 }
 
@@ -48,7 +49,7 @@ main > div.active {
 
     width: 10rem;
     height: 4rem;
-    font-size: 1.4rem;
+    font-size: calc(var(--base-font-size, 16px) * 1.4);
 
     border: 2px solid rgba(0, 0, 0, 0.5);
     border-radius: 2rem;
@@ -62,12 +63,12 @@ main > div.active {
 }
 
 #message {
-    font-size: 3rem;
+    font-size: calc(var(--base-font-size, 16px) * 3);
     text-align: center;
 }
 
 #fixation {
-    font-size: 10rem;
+    font-size: calc(var(--base-font-size, 16px) * 10);
 }
 
 #word-pairs {
@@ -89,7 +90,7 @@ main > div.active {
 .pair-row,
 #single-word,
 .option {
-    font-size: 1.6rem;
+    font-size: calc(var(--base-font-size, 16px) * 1.6);
     text-align: center;
 }
 
@@ -103,7 +104,6 @@ main > div.active {
 
 .option {
     background-color: white;
-    font-family: inherit;
     cursor: pointer;
 
     transition: background-color 0.3s;
@@ -119,7 +119,7 @@ main > div.active {
 }
 
 #question-text {
-    font-size: 1.8rem;
+    font-size: calc(var(--base-font-size, 16px) * 1.8);
     text-align: center;
 }
 
@@ -128,4 +128,10 @@ main > div.active {
     gap: 2rem;
 
     transform: translateY(-2rem);
+}
+
+#start-task-button,
+.option {
+    font-family: inherit;
+    font-weight: inherit;
 }

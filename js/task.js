@@ -110,14 +110,30 @@ async function upload_results(category, level, results) {
     return data;
 }
 
+async function apply_condition_style() {
+    const config = await load_config();
+    const condition = config[category];
+
+    document.documentElement.style.setProperty(
+        "--base-font-size",
+        condition.font_size
+    );
+
+    document.documentElement.style.setProperty(
+        "--base-font-weight",
+        condition.font_weight
+    );
+}
+
 async function main() {
     const config = await load_config();
     const data = await load_data(lang, level);
 
+    const condition = config[category];
     const participant_id = crypto.randomUUID();
     
     let timestamp = null;
-    let apr = config[category].initial_apr;
+    let apr = condition.initial_apr;
 
     const results = [];
     const correct_history = [];
@@ -188,9 +204,9 @@ async function main() {
         // 根據滑動窗口正確率調整 apr
         const last_apr = apr;
         if (accuracy > accuracy_threshold) {
-            apr += config[category].apr_adjustment_above_threshold;
+            apr += condition.apr_adjustment_above_threshold;
         } else if (accuracy < accuracy_threshold) {
-            apr += config[category].apr_adjustment_below_threshold;
+            apr += condition.apr_adjustment_below_threshold;
         }
 
         // 限制 apr 上下限
@@ -228,6 +244,8 @@ async function main() {
     message.innerHTML = "任務已完成<br>感謝您的參與!";
     await show_screen(message);
 }
+
+apply_condition_style();
 
 start_button.addEventListener("click", async () => {
     start_button.disabled = true;
