@@ -130,7 +130,13 @@ async function main() {
     const data = await load_data(lang, level);
 
     const condition = config[category];
-    const participant_id = crypto.randomUUID();
+    const participant_id = sessionStorage.getItem("participant_id");
+
+    if (!participant_id) {
+        alert("找不到受試者代號，請重新輸入。");
+        window.location.href = `participant_info.html${window.location.search}`;
+        return;
+    }
     
     let timestamp = null;
     let apr = condition.initial_apr;
