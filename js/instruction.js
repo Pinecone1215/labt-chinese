@@ -34,12 +34,12 @@ async function apply_condition_style() {
 
     const condition = config[category];
     document.documentElement.style.setProperty(
-        "--base-font-size",
+        "--base-size",
         condition.font_size
     );
 
     document.documentElement.style.setProperty(
-        "--base-font-weight",
+        "--base-weight",
         condition.font_weight
     );
 }

@@ -10,7 +10,7 @@ html { font-size: 16px; }
 
 body { 
     font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
-    font-weight: var(--base-font-weight, 400);
+    font-weight: var(--base-weight, 400);
 
     user-select: none;
     cursor: default;
@@ -29,7 +29,7 @@ main {
 
 .instruction {
     display: none;
-    width: min(90%, calc(var(--base-font-size, 16px) * 50));
+    width: min(90%, calc(var(--base-size, 16px) * 50));
 
     flex-direction: column;
     align-items: center;
@@ -39,13 +39,13 @@ main {
 
 .instruction.active { display: flex; }
 .instruction h1 {
-    font-size: calc(var(--base-font-size, 16px) * 4);
+    font-size: calc(var(--base-size, 16px) * 4);
     font-weight: 600;
 }
 
 .instruction-text {
     width: 100%;
-    font-size: calc(var(--base-font-size, 16px) * 1.5);
+    font-size: calc(var(--base-size, 16px) * 1.5);
 
     display: flex;
     flex-direction: column;
@@ -53,7 +53,7 @@ main {
 }
 
 .instruction-text h2 {
-    font-size: calc(var(--base-font-size, 16px) * 2);
+    font-size: calc(var(--base-size, 16px) * 2);
     font-weight: 600;
 }
 
@@ -74,7 +74,7 @@ main {
     height: 4rem;
 
     font-weight: inherit;
-    font-size: calc(var(--base-font-size, 16px) * 1.4);
+    font-size: 1.6rem;
 }
 
 .trial-example {
@@ -95,7 +95,7 @@ main {
 .single-words,
 .question-example {
     text-align: center;
-    font-size: calc(var(--base-font-size, 16px) * 1.5);
+    font-size: calc(var(--base-size, 16px) * 1.5);
 }
 
 .word-pairs { min-width: 10rem; }
@@ -105,19 +105,19 @@ main {
 
 .flow-arrow {
     color: green;
-    font-size: calc(var(--base-font-size, 16px) * 2);
+    font-size: calc(var(--base-size, 16px) * 2);
 }
 
 .navigation {
     display: none;
 
-    width: min(90%, 800px);
+    width: min(90%, calc(var(--base-size, 16px) * 50));
     align-items: center;
     justify-content: space-between;
 }
 
 .navigation.active { display: flex; }
-#page-position { font-size: calc(var(--base-font-size, 16px) * 1.5); }
+#page-position { font-size: calc(var(--base-size, 16px) * 1.5); }
 
 #back-button,
 #next-button {
@@ -125,7 +125,7 @@ main {
     height: 3.5rem;
 
     font-weight: inherit;
-    font-size: calc(var(--base-font-size, 16px) * 1.2);
+    font-size: 1.2rem;
 }
 
 .pair-example,
@@ -190,6 +190,6 @@ main {
 .pair-row,
 .single-row,
 .choice-question {
-    font-size: calc(var(--base-font-size, 16px) * 1.2);
+    font-size: calc(var(--base-size, 16px) * 1.2);
     text-align: center;
 }

@@ -10,7 +10,7 @@ html { font-size: 16px; }
 
 body { 
     font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
-    font-weight: var(--base-font-weight, 400);
+    font-weight: var(--base-weight, 400);
 
     user-select: none;
     cursor: default;
@@ -28,7 +28,7 @@ main {
 }
 
 label {
-    font-size: calc(var(--base-font-size, 16px) * 2);
+    font-size: calc(var(--base-size, 16px) * 2);
 }
 
 input {
@@ -40,7 +40,7 @@ input {
 
     font-family: inherit;
     font-weight: inherit;
-    font-size: calc(var(--base-font-size, 16px) * 1.6);
+    font-size: calc(var(--base-size, 16px) * 1.6);
 
     padding: 2px 0.5rem;
     text-align: center;

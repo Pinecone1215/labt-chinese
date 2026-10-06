@@ -115,12 +115,12 @@ async function apply_condition_style() {
     const condition = config[category];
 
     document.documentElement.style.setProperty(
-        "--base-font-size",
+        "--base-size",
         condition.font_size
     );
 
     document.documentElement.style.setProperty(
-        "--base-font-weight",
+        "--base-weight",
         condition.font_weight
     );
 }
@@ -242,9 +242,32 @@ async function main() {
     message.textContent = "資料上傳中，請稍候……";
     await show_screen(message);
 
-    // 上傳本次測驗之結果
-    const upload_result = await upload_results(category, level, results);
-    console.log(upload_result);
+    // 上傳本次測驗之結果，失敗時重試
+    let retry_count = 0;
+    const retry_limit = 1;
+    while (true) {
+        try {
+            message.textContent = "資料上傳中，請稍候……";
+            await upload_results(category, level, results);
+            break;
+        } catch (error) {
+            console.error("資料上傳失敗：", error);
+
+            if (retry_count < retry_limit) {
+                message.textContent = "資料上傳失敗，5 秒後重試，請勿關閉頁面。";
+                await show_screen(message);
+
+                await new Promise((resolve) => setTimeout(resolve, 5000));
+            }
+            else { 
+                message.textContent = "資料上傳失敗，請通知研究人員，暫勿關閉或重新整理頁面。";
+                await show_screen(message);
+                return;
+            }
+
+            retry_count += 1;
+        }
+    }
 
     // 顯示任務完成
     message.innerHTML = "任務已完成<br>感謝您的參與!";

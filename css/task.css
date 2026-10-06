@@ -10,7 +10,7 @@ html { font-size: 16px; }
 
 body { 
     font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
-    font-weight: var(--base-font-weight, 400);
+    font-weight: var(--base-weight, 400);
 
     user-select: none;
     cursor: default;
@@ -40,7 +40,7 @@ main > div.active {
     flex-direction: column;
     gap: 1.5rem;
 
-    font-size: calc(var(--base-font-size, 16px) * 1.6);
+    font-size: calc(var(--base-size, 16px) * 1.6);
     text-align: center;
 }
 
@@ -49,7 +49,7 @@ main > div.active {
 
     width: 10rem;
     height: 4rem;
-    font-size: calc(var(--base-font-size, 16px) * 1.4);
+    font-size: calc(var(--base-size, 16px) * 1.4);
 
     border: 2px solid rgba(0, 0, 0, 0.5);
     border-radius: 2rem;
@@ -63,12 +63,12 @@ main > div.active {
 }
 
 #message {
-    font-size: calc(var(--base-font-size, 16px) * 3);
+    font-size: calc(var(--base-size, 16px) * 3);
     text-align: center;
 }
 
 #fixation {
-    font-size: calc(var(--base-font-size, 16px) * 10);
+    font-size: calc(var(--base-size, 16px) * 10);
 }
 
 #word-pairs {
@@ -90,7 +90,7 @@ main > div.active {
 .pair-row,
 #single-word,
 .option {
-    font-size: calc(var(--base-font-size, 16px) * 1.6);
+    font-size: calc(var(--base-size, 16px) * 1.6);
     text-align: center;
 }
 
@@ -119,7 +119,7 @@ main > div.active {
 }
 
 #question-text {
-    font-size: calc(var(--base-font-size, 16px) * 1.8);
+    font-size: calc(var(--base-size, 16px) * 1.8);
     text-align: center;
 }
 
