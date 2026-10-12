@@ -125,6 +125,7 @@ async function apply_condition_style() {
     );
 }
 
+const results = [];
 async function main() {
     const config = await load_config();
     const data = await load_data(lang, level);
@@ -141,7 +142,6 @@ async function main() {
     let timestamp = null;
     let apr = condition.initial_apr;
 
-    const results = [];
     const correct_history = [];
     const max_length = config.common.adaptive_window_size;
 
@@ -269,6 +269,8 @@ async function main() {
             retry_count += 1;
         }
     }
+
+    sessionStorage.removeItem("participant_id");
 
     // 顯示任務完成
     if (upload_ok) {
