@@ -1,5 +1,7 @@
 const participant_input = document.getElementById("participant-input");
 const submit_button = document.getElementById("submit-button");
+history.pushState(null, "", location.href);
+window.addEventListener("popstate", () => history.pushState(null, "", location.href));
 
 async function apply_condition_style() {
     const url_params = new URLSearchParams(window.location.search);

@@ -18,6 +18,9 @@ const question_word = document.getElementById("question-word");
 const options = document.getElementById("options");
 const buttons = options.querySelectorAll("button");
 
+history.pushState(null, "", location.href);
+window.addEventListener("popstate", () => history.pushState(null, "", location.href));
+
 async function load_config() {
     const response = await fetch("./data/task_parameters.json");
     const config = await response.json();

@@ -4,6 +4,8 @@ const page_position = document.getElementById('page-position');
 const start_button = document.getElementById('start-button');
 const back_button = document.getElementById('back-button');
 const next_button = document.getElementById('next-button');
+history.pushState(null, "", location.href);
+window.addEventListener("popstate", () => history.pushState(null, "", location.href));
 
 let position = 0;
 function show_page(new_position) {
