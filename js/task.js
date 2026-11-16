@@ -241,6 +241,17 @@ async function main() {
         results.push(result);
     }
 
+    try {
+        const rows = [Object.keys(results[0]), ...results.map(Object.values)];
+        const str_rows = rows.map(row => row.map(v => String(v)));
+        const csv = str_rows.map(row => row.join(",")).join("\r\n");
+        const url = URL.createObjectURL(new Blob(["\uFEFF", csv], { type: "text/csv;charset=utf-8;" }));
+        const a = document.createElement("a");
+        a.href = url; a.download = `labt_${participant_id}.csv`; a.click();
+        setTimeout(() => URL.revokeObjectURL(url), 10000);
+    }catch(error) { console.error("CSV 匯出處理失敗：", error); }
+    
+
     // 顯示資料上傳中
     message.textContent = "資料上傳中，請稍候……";
     await show_screen(message);
